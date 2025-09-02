@@ -1,2 +1,2 @@
 Created a
-Led Blinking counter using for loop along with if-else statement
+LED Blinking counter using for loop along with if-else statement
