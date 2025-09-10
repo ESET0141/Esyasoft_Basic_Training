@@ -1,0 +1,1 @@
+## The assmt demonstrates the use of a Hardware Abstraction Layer to control an LED's state.
