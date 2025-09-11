@@ -1,72 +1,33 @@
-use master
-
-select * from Customers;
-
-use EsyaDb
-
-select * from books;
-
-select * from books order by price desc offset 1 rows fetch next 3 rows only;
-
-select top 3 * from books order by price desc;
-
-/*offset doesn't work on top clause */
-
-select count(*), product_id from books group by product_id having count(*) >0;
-
-
-
-/*Tasks*/
-
-/*Query 1*/
+use EsyaDb;
 
 select * from books;
 select * from users;
 select * from orders;
 
-select u.name, b.title , o.order_no from users as u inner join orders as o on u.user_id = o.user_id 
-inner join books as b on o.product_id = b.product_id;
+select u.user_id, u.name , b.title, row_number() over (partition by u.user_id order by b.price) as row_numbers, 
+from users as u
+inner join orders as o 
+on u.user_id = o.user_id 
+inner join books as b on b.product_id = o.product_id
+where price = (select max(b.price) from books b);
 
-/*Query 2*/
+--Task 1 --
 
-select count(*) as total_orders from orders;
+select o.order_no, u.name ,b.price, b.title,
+row_number() over (partition by u.user_id order by b.price desc) as row_number,
+rank() over (partition by u.user_id order by b.price desc) as ranks,
+dense_rank() over (partition by u.user_id order by b.price desc) as d_ranks
+from users as u inner join orders as o 
+on u.user_id = o.user_id 
+inner join books as b on b.product_id = o.product_id;
 
-/*Query 3*/
+-- Task 2 --
 
-select u.name, b.title , o.order_no from users as u inner join orders as o on u.user_id = o.user_id 
-inner join books as b on o.product_id = b.product_id where b.title='How to laugh';
-
-/*Query 4*/
-
-select distinct u.name, b.title , o.order_no from users as u inner join orders as o on u.user_id = o.user_id 
-inner join books as b on o.product_id = b.product_id;
-
-/*Query 5*/
-
-select u.name, sum(b.price) as total_price from users as u inner join orders as o on u.user_id = o.user_id 
-inner join books as b on o.product_id = b.product_id group by u.name;
-
-/*Query 6*/
-
-select top 1 u.name , sum(b.price) as Total_price from users as u inner join orders as o on u.user_id = o.user_id 
-inner join books as b on o.product_id = b.product_id group by u.name order by Total_price desc;
-
-/*Query 7*/
-
-select max(price) as most_costly, min(price) as least_costly from books;
-
-/*Query 8*/
-
-select title from books where price = (select max(price) from books);
-
-/*Query 9*/
-
-select title from books where price = (select min(price) from books);
-
-/*Query 10*/
-
-select top 1 * from books order by product_id desc;
-
-
-
-
+select u.user_id, u.name ,
+sum(b.price) as total_spent, 
+rank() over ( order by sum(b.price) desc) as ranks,
+dense_rank() over (order by sum(b.price) desc) as d_ranks
+from users as u inner join orders as o 
+on u.user_id = o.user_id 
+inner join books as b on b.product_id = o.product_id
+group by u.user_id,u.name;
