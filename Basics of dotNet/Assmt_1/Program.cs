@@ -4,8 +4,8 @@
     {
         static void Main(string[] args)
         {
-            int choice, Acct_num, amt = 0, withdraw =0;
-            string Name;
+            int choice, Acct_num= 0, amt = 0, withdraw =0;
+            string Name ="";
             bool acct_exist = false;
              
             void create_acct()
@@ -45,15 +45,12 @@
             Console.WriteLine("3. Withdraw Money ");
             Console.WriteLine("4. Display account details ");
             Console.WriteLine("5. Exit ");
-
-            Console.WriteLine("Enter your Choice ");
-
-            choice = Convert.ToInt32(Console.ReadLine());
-
-            
        
             while (true)
             {
+                Console.WriteLine("Enter your Choice ");
+                choice = Convert.ToInt32(Console.ReadLine());
+
                 switch (choice) {
                     
                     case 1:
