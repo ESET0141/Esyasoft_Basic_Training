@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\DLMS_Comms\bin\Debug\net8.0\DLMS_Comms.exe
+C:\Users\user\source\repos\DLMS_Comms\bin\Debug\net8.0\DLMS_Comms.deps.json
+C:\Users\user\source\repos\DLMS_Comms\bin\Debug\net8.0\DLMS_Comms.runtimeconfig.json
+C:\Users\user\source\repos\DLMS_Comms\bin\Debug\net8.0\DLMS_Comms.dll
+C:\Users\user\source\repos\DLMS_Comms\bin\Debug\net8.0\DLMS_Comms.pdb
+C:\Users\user\source\repos\DLMS_Comms\obj\Debug\net8.0\DLMS_Comms.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\DLMS_Comms\obj\Debug\net8.0\DLMS_Comms.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\DLMS_Comms\obj\Debug\net8.0\DLMS_Comms.AssemblyInfo.cs
+C:\Users\user\source\repos\DLMS_Comms\obj\Debug\net8.0\DLMS_Comms.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\DLMS_Comms\obj\Debug\net8.0\DLMS_Comms.dll
+C:\Users\user\source\repos\DLMS_Comms\obj\Debug\net8.0\refint\DLMS_Comms.dll
+C:\Users\user\source\repos\DLMS_Comms\obj\Debug\net8.0\DLMS_Comms.pdb
+C:\Users\user\source\repos\DLMS_Comms\obj\Debug\net8.0\DLMS_Comms.genruntimeconfig.cache
+C:\Users\user\source\repos\DLMS_Comms\obj\Debug\net8.0\ref\DLMS_Comms.dll
