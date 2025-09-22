@@ -1,0 +1,50 @@
+.container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.boxes {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.color-box {
+  width: 100px;
+  height: 100px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: border 0.3s ease;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.highlighted {
+  border: 3px solid yellow;
+}
+
+.highlight-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.highlight-button:hover {
+  background-color: #555;
+}
